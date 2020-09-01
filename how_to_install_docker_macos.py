@@ -25,11 +25,12 @@ import time
 #sudo systemctl start docker.service
 # The above will start the docker service
 #Check the version - should retrun the docker version e.g Docker version 18.09.7, build 2d0083d
+#docker-machine delete <>
 #docker --version 
 def subprocess_cmd(command):
     p=subprocess.Popen(command,stdout=subprocess.PIPE,shell=True)
     p.stdout=p.communicate()[0].strip()
     print (p.stdout)
 print ("Installing docker....")
-subprocess_cmd('brew update ; brew remove docker ; brew remove docker-machine ; brew cask install docker ; brew install docker-machine; brew cask install virtualbox ; brew install docker-compose ; docker-machine create --driver virtualbox default ; docker-machine ls ; docker-machine start docker-test ; docker-machine ls ; docker-machine stop docker-test; docker-machine env docker-test ; eval $(docker-machine env docker-test) ; docker run hello-world ') 
+subprocess_cmd('brew update ; brew remove docker ; brew remove docker-machine ; brew cask install docker ; brew install docker-machine; brew cask install virtualbox ; brew install docker-compose ; docker --version ; docker-machine create --driver virtualbox default ; docker-machine ls ; docker-machine start docker-test ; docker-machine ls ; docker-machine stop docker-test; docker-machine env docker-test ; eval $(docker-machine env docker-test) ; docker run hello-world ') 
 
