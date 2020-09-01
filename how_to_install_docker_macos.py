@@ -31,5 +31,5 @@ def subprocess_cmd(command):
     p.stdout=p.communicate()[0].strip()
     print (p.stdout)
 print ("Installing docker....")
-subprocess_cmd('brew update ; brew remove docker; brew remove docker-engine ; brew remove docker.io ; brew remove docker-machine ; brew install docker ; brew install docker-machine; brew cask install virtualbox ; brew install docker-compose ; docker-machine create --driver virtualbox default ; docker-machine ls ; docker-machine start default ; docker-machine ls ; docker-machine stop default; docker-machine env default ; eval $(docker-machine env default) ; docker run hello-world ') 
+subprocess_cmd('brew update ; brew remove docker ; brew remove docker-machine ; brew cask install docker ; brew install docker-machine; brew cask install virtualbox ; brew install docker-compose ; docker-machine create --driver virtualbox default ; docker-machine ls ; docker-machine start docker-test ; docker-machine ls ; docker-machine stop docker-test; docker-machine env docker-test ; eval $(docker-machine env docker-test) ; docker run hello-world ') 
 
