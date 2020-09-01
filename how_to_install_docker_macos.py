@@ -6,24 +6,17 @@ import cmd
 import time
 #import pdb; pdb.set_trace() # Running script in debug mode 
 #Install docker 
-#sudo brew update
+#brew update
 #Uninstall the docker if its installed
-#sudo brew remove docker docker-engine docker.io
-#sudo apt autoremove docker docker-engine docker.io # To remove all dependancies 
+#sudo brew remove docker 
 #Install Docker 
-#sudo apt install docker.io
-#Enable Docker 
-#sudo systemctl enable docker
-#Bellow steps to unmask docker
-#If you get the this error - Failed to start docker.service: Unit docker.service is masked.
-# sudo systemctl list-unit-files | grep docker
-# sudo systemctl unmask docker.service
-# sudo systemctl unmask docker.socket
-#Start Docker 
-#sudo systemctl start docker
-#OR
-#sudo systemctl start docker.service
-# The above will start the docker service
+#brew install docker
+#Install other dendencies 
+#Install Virtual Box 
+#Start the Docker-Machine
+#Print the env variables
+# 
+#The above will start the docker service
 #Check the version - should retrun the docker version e.g Docker version 18.09.7, build 2d0083d
 #docker-machine delete <>
 #docker --version 
@@ -32,5 +25,5 @@ def subprocess_cmd(command):
     p.stdout=p.communicate()[0].strip()
     print (p.stdout)
 print ("Installing docker....")
-subprocess_cmd('brew update ; brew remove docker ; brew remove docker-machine ; brew cask install docker ; brew install docker-machine; brew cask install virtualbox ; brew install docker-compose ; docker --version ; docker-machine create --driver virtualbox default ; docker-machine ls ; docker-machine start docker-test ; docker-machine ls ; docker-machine stop docker-test; docker-machine env docker-test ; eval $(docker-machine env docker-test) ; docker run hello-world ') 
+subprocess_cmd('brew update ; brew remove docker ; brew remove docker-machine ; brew cask install docker ; brew cask install virtualbox ; docker --version ; docker-machine create --driver virtualbox docker-test ; docker-machine ls ; docker-machine start docker-test ; docker-machine ls ; docker-machine stop docker-test; docker-machine env docker-test ; eval $(docker-machine env docker-test) ; docker run hello-world ') 
 
